@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Eczar&family=Vidaloka&display=swap');
 body {
     background-color: rgb(0, 17, 39);
     color:white;
     font-size: 20px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Eczar', serif;
 }
 h1 {
-    margin: 10px auto;
+    margin: 20px auto;
     text-align: center;
-    color: green;
-    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    text-shadow: none;
+    font-size: 28px;
+    font-family: 'Vidaloka', serif;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 10px;
+    -webkit-backdrop-filter: brightness(70%);
+    backdrop-filter: brightness(70%);
+    border-radius: 20px;
 }
 .mainParent {
     display: flex;
@@ -23,7 +33,10 @@ h1 {
     margin: 20px;
     display: flex;
     flex-direction: column;
-    
+    -webkit-backdrop-filter: brightness(120%);
+    backdrop-filter: brightness(120%);
+    border-radius: 30px;
+    padding: 10px;
 }
 .inputLabelGroup {
     display: flex;
@@ -46,6 +59,8 @@ select {
     font-size: inherit;
     filter: brightness(70%);
     width: 150px;
+    color: black;
+    border-radius: 20px;
 }
 
 .resultsParent {
@@ -57,18 +72,32 @@ select {
     margin: 20px;
     display: flex;
     flex-direction: column;
-    
+    -webkit-backdrop-filter: brightness(80%);
+    backdrop-filter: brightness(80%);
+    border-radius: 30px;
+    padding: 10px;
 }
 button{
-    width: 100px;
+    width: 120px;
     align-self: center;
-    height: 35px;
+    height: 45px;
     font-family: inherit;
     font-size: 18px;
     border-radius: 20px;
     background-color: indianred;
     cursor: pointer;
+    color: black;
 }
 .resultLabel {
     color: greenyellow;
+}
+
+footer {
+    font-size: 17px;
+    text-align: center;
+    line-height: 15px;
+}
+a{
+    color: rgb(145, 145, 145);
+    text-decoration: none;
 }
