@@ -5,7 +5,7 @@ const photoTherapyResult = document.getElementById("photoTherapyThreshold");
 var photoTherapyThreshold , exchangeThreshold;
 function    gestationalAgeCalc() {
     var gestationalAgeDropDownValue = document.getElementById("gestationalAgeDropdown").value;
-    globalGestationalAge = gestationalAgeDropDownValue;
+    globalGestationalAge = Number(gestationalAgeDropDownValue);
 }
 
 function    ageDayCalc() {
@@ -46,7 +46,9 @@ function    riskFactorCalc() {
 }
 
 function     engine() {
-
+    var ageHour = globalAgeHour;
+    console.log("Hour" + ageHour)
+    
     if (globalRiskFactorBoolean) {
         switch (globalGestationalAge) {
             case 40:
@@ -54,27 +56,26 @@ function     engine() {
             case 38:
                 photoTherapyCalc(4);
                 exchangeCalc(14);
-                console.log(functionalExchangeAgeDay,functionalPhotoTherapyAgeDay);
-                photoTherapyThreshold = phototherapyGA38withRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA38withRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA38withRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA38withRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
             case 37:
                 photoTherapyCalc(6);
                 exchangeCalc(14);
-                photoTherapyThreshold = phototherapyGA37withRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA37withRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA37withRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA37withRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
             case 36:
                 photoTherapyCalc(14);
                 exchangeCalc(14);
-                photoTherapyThreshold = phototherapyGA36withRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA36withRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA36withRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA36withRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
             case 35:
                 photoTherapyCalc(14);
                 exchangeCalc(14);
-                photoTherapyThreshold = phototherapyGA35withRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA35withRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA35withRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA35withRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
         }
     } else {
@@ -82,38 +83,38 @@ function     engine() {
             case 40:
                 photoTherapyCalc(4);
                 exchangeCalc(4);
-                photoTherapyThreshold = phototherapyGA40noRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA38noRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA40noRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA38noRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
             case 39:
                 photoTherapyCalc(6);
                 exchangeCalc(4);
-                photoTherapyThreshold = phototherapyGA39noRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA38noRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA39noRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA38noRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
             case 38:
                 photoTherapyCalc(14);
                 exchangeCalc(4);
-                photoTherapyThreshold = phototherapyGA38noRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA38noRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA38noRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA38noRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
             case 37:
                 photoTherapyCalc(14);
                 exchangeCalc(6);
-                photoTherapyThreshold = phototherapyGA37noRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA37noRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA37noRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA37noRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
             case 36:
                 photoTherapyCalc(14);
                 exchangeCalc(14);
-                photoTherapyThreshold = phototherapyGA36noRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA36noRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA36noRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA36noRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
             case 35:
                 photoTherapyCalc(14);
                 exchangeCalc(14);
-                photoTherapyThreshold = phototherapyGA35noRiskFactor[functionalPhotoTherapyAgeDay][globalAgeHour];
-                exchangeThreshold = exchangeGA35noRiskFactor[functionalExchangeAgeDay][globalAgeHour];
+                photoTherapyThreshold = phototherapyGA35noRiskFactor[functionalPhotoTherapyAgeDay][ageHour];
+                exchangeThreshold = exchangeGA35noRiskFactor[functionalExchangeAgeDay][ageHour];
                 break;
         }
     }
