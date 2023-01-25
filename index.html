@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilirubin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script defer src="/script.js"></script>
+    <header>
+        <h1>Pediatric Hyperbilirubinemia Assistant</h1>
+    </header>
+    <div class="mainParent">
+        <div class="inputParent">
+            <div class="inputBox" id="gestationalAgeBox">
+                Gestational age
+                <select title="gestationalAgeDropdown" name="gestationalAge" id="gestationalAgeDropdown" onchange="gestationalAgeCalc()">
+                    <option value="40">40 weeks</option>
+                    <option value="39">39 weeks</option>
+                    <option value="38">38 weeks</option>
+                    <option value="37">37 weeks</option>
+                    <option value="36">36 weeks</option>
+                    <option value="35">35 weeks</option>
+                </select>
+            </div>
+            <div class="inputBox" id="dayHourBox">
+                Infants's age
+                <div class="inputLabelGroup">
+                    <input type="number" title="dayInput" name="dayInput" id="dayInput" class="input" value="1" onkeyup="ageDayCalc()" onchange="ageDayCalc()">
+                    <label for="dayInput">Days</label>
+                </div>
+                <div class="inputLabelGroup">
+                    <input type="number" title="hourInput" name="hourInput" id="hourInput" class="input" value="1" onkeyup="ageHourCalc()" onchange="ageHourCalc()">
+                    <label for="hourInput">Hours</label>
+                </div>
+            </div>
+            <div class="inputBox" id="riskFactorBox">
+                Presence of Hyperbilirubinemia neurotoxicity risk factors
+                <br><small>other than gestational age 	&#60 38</small>
+                <select name="riskFactor" title="riskFactor" id="riskFactorDropdown" onchange="riskFactorCalc()">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <button title="calculate" onclick="engine()">Calculate</button>
+            <div class="inputBox">
+                Hyperbilirubinemia neurotoxicity risk factors include:
+                <ul>
+                    <li>Gestational age &#60 38 weeks</li>
+                    <li>Albumin &#62 3.0 g/dL</li>
+                    <li>Isoimmune hemolytic disease</li>
+                    <li>Glucose-6-phosphate dehydrogenase (G6PD) deficiency, or other hemolytic conditions</li>
+                    <li>Sepsis</li>
+                    <li>any significant clinical instability in the previous 24 hours</li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="resultsParent">
+            <div class="resultsBox" id="photoTherapyParent" >
+                Phototherapy Threshold:
+                <div id="photoTherapyThreshold" class="resultLabel">
+
+                </div>
+            </div>
+            <div class="resultsBox" id="exchangeParent">
+                Exchange transfusion Threshold:
+                <div id="exchangeThreshold" class="resultLabel">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
