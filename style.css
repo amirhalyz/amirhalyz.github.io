@@ -27,7 +27,6 @@ h1 {
 .inputParent {
     display: flex;
     flex-direction: column;
-    width: 50%;
 }
 .inputBox {
     margin: 20px;
@@ -66,7 +65,6 @@ select {
 .resultsParent {
     display: flex;
     flex-direction: column;
-    width: 50%;
 }
 .resultsBox {
     margin: 20px;
@@ -100,4 +98,28 @@ footer {
 a{
     color: rgb(145, 145, 145);
     text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+    .mainParent {
+        flex-direction: row;
+    }
+    .inputParent {
+        width: 50%;
+    }
+    .resultsParent {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mainParent {
+        flex-direction: column;
+    }
+    .inputParent {
+        width: 100%;
+    }
+    .resultsParent {
+        width: 100%;
+    }
 }
