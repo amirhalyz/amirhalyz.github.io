@@ -3,6 +3,12 @@ var functionalPhotoTherapyAgeDay = 1 , functionalExchangeAgeDay = 1;
 const exchangeResult = document.getElementById("exchangeThreshold");
 const photoTherapyResult = document.getElementById("photoTherapyThreshold");
 var photoTherapyThreshold , exchangeThreshold;
+var photoTherapyWithRiskFactorChartSRC = "https://aap2.silverchair-cdn.com/aap2/content_public/journal/pediatrics/150/3/10.1542_peds.2022-058859/3/peds_2022058859_f3.png";
+var photoTherapyNoRiskFactorChartSRC = "https://aap2.silverchair-cdn.com/aap2/content_public/journal/pediatrics/150/3/10.1542_peds.2022-058859/3/peds_2022058859_f2.png";
+var exchangeWithRiskFactorChartSRC = "https://aap2.silverchair-cdn.com/aap2/content_public/journal/pediatrics/150/3/10.1542_peds.2022-058859/3/peds_2022058859_f6.png";
+var exchangeNoRiskFactorChartSRC = "https://aap2.silverchair-cdn.com/aap2/content_public/journal/pediatrics/150/3/10.1542_peds.2022-058859/3/peds_2022058859_f5.png";
+
+
 function    gestationalAgeCalc() {
     var gestationalAgeDropDownValue = document.getElementById("gestationalAgeDropdown").value;
     globalGestationalAge = Number(gestationalAgeDropDownValue);
@@ -38,10 +44,13 @@ function    riskFactorCalc() {
     var riskFactorDropDownValue = document.getElementById("riskFactorDropdown").value;
     if (riskFactorDropDownValue == "yes") {
         globalRiskFactorBoolean = true;
-        // document.body.style.backgroundColor = "green";
+        document.getElementById("photoTherapyChart").src = photoTherapyWithRiskFactorChartSRC;
+        document.getElementById("exchangeChart").src = exchangeWithRiskFactorChartSRC;
+        
     } else {
         globalRiskFactorBoolean = false;
-        // document.body.style.backgroundColor = "yellow";
+        document.getElementById("photoTherapyChart").src = photoTherapyNoRiskFactorChartSRC;
+        document.getElementById("exchangeChart").src = exchangeNoRiskFactorChartSRC;
     }
 }
 
